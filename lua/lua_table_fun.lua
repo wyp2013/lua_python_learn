@@ -8,7 +8,7 @@ print(table.maxn(test))
 local network = {
     {name = "Tom", ip = "120.112.1.0"},
     {name = "Mary", ip = "202.115.32.36"},
-    {name = "Jam", ip = "202.115.32.39"}
+    {name = "Jam", ip = "201.115.32.39"}
 }
 
 table.insert(network, 1, {name = "wyp", ip = "www.www.www.www"})
@@ -23,7 +23,9 @@ end
 
 table.foreach(network, print_elem) 
 
+table.sort(network, function(a, b) return a.ip <  b.ip end)
 
+table.foreach(network, print_elem)
 
 
 
