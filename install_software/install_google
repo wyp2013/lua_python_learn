@@ -1,0 +1,10 @@
+首先在/etc/yum.repos.d目录中创建google-chrome.repo文件，其写入如下内容：
+ogle-chrome]  
+name=google-chrome  
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch  
+enabled=1  
+gpgcheck=1  
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+然后
+yum install google-chrome-stable
+就ok了
