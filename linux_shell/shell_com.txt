@@ -1,0 +1,81 @@
+touch filename //创建一个新文件
+touch keyboard.txt
+ls -a //显示包含隐藏的文件
+-a - lists all contents, including hidden files and directories
+-l - lists all contents of a directory in long format
+-t - order files and directories by the time they were last modified.
+ls -alt //结合使用
+
+move a.file b.file //重命名
+
+echo "Hello" > hello.txt
+
+cat hello.txt
+cat oceans.txt > continents.txt //>重写，标准输出
+cat glaciers.txt >> rivers.txt //>>追加在未文件
+cat < lakes.txt //标准输入
+
+wc a.txt //输出a。txt中行数，单词数，字符数
+cat lakes.txt | sort > sorted-lakes.txt 
+uniq a.txt // 
+sort a.txt | uniq //
+
+grep -i Mount mountains.txt //输出有Mount的行
+grep -i enables the command to be case insensitive
+
+grep -R Arctic /home/ccuser/workspace/geography
+grep -R searches all files in a directory and outputs filenames and lines containing matched results. -R stands for "recursive".
+
+sed 's/snow/rain/' forests.txt  //把forests.txt中的rain替换成snow（每一行值替换一次）
+sed stands for "stream editor". It accepts standard input and modifies it based on an expression, before displaying it as output data.
+It is similar to "find and replace".
+
+Let's look at the expression 's/snow/rain/':
+
+s: stands for "substitution". it is always used when using sed for substitution.
+snow: the search string, the text to find.
+rain: the replacement string, the text to add in place.
+
+In this case, sed searches forests.txt for the word "snow" and replaces it with "rain." 
+Importantly, the above command will only replace the first instance of "snow" on a line.
+
+sed 's/snow/rain/g' forests.txt  //把forests.txt中的rain替换成snow（每一行都全部替换）
+
+The above command uses the g expression, meaning "global". 
+Here sed searches forests.txt for the word "snow" and replaces it with "rain", globally. 
+All instances of "snow" on a line will be turned to "rain".
+
+nano ~/.bash_profile //~表示是home目录， .表示是隐藏文件
+alias pd="pwd" //然后退出nano alias别名
+source ~/.bash_profile //The command source ~/.bash_profile makes the alias pd available in the current session.
+执行pd(相当于执行pwd)
+alias hy="history"
+alias ll="ls -la"
+source ~/.bash_profile
+然后执行ll hy 
+export USER="Jane Doe"
+source ~/.bash_profile
+echo $USER
+The line export makes the variable to be available to all child sessions initiated from the session you are in. 
+This is a way to make the variable persist across programs.
+export PS1=">> "
+
+PS1 is a variable that defines the makeup and style of the command prompt.
+
+export PS1=">> " sets the command prompt variable and exports the variable. Here we change the default command prompt from $ to >>.
+After using the source command, the command line displays the new command prompt.
+
+$ env                                                                                                                                          
+GEM_HOME=/home/ccuser/.gem/ruby/2.0.0                                                                                                          
+TERM=linux                                                                                                                                     
+LC_ALL=C.UTF-8                                                                                                                                 
+PATH=/home/ccuser/.gem/ruby/2.0.0/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/sbin:/bin                                             
+PWD=/home/ccuser/workspace/music                                                                                                               
+LANG=C.UTF-8                                                                                                                                   
+PS1=$                                                                                                                                          
+HOME=/home/ccuser                                                                                                                              
+SHLVL=1                                                                                                                                        
+UPSTART_INSTANCE=                                                                                                                              
+UPSTART_JOB=godex                                                                                                                              
+_=/usr/bin/env 
+
