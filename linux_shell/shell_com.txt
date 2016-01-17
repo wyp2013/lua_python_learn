@@ -48,12 +48,16 @@ All instances of "snow" on a line will be turned to "rain".
 nano ~/.bash_profile //~表示是home目录， .表示是隐藏文件
 alias pd="pwd" //然后退出nano alias别名
 source ~/.bash_profile //The command source ~/.bash_profile makes the alias pd available in the current session.
+
 执行pd(相当于执行pwd)
 alias hy="history"
 alias ll="ls -la"
+
+unalias取消别名
+
 source ~/.bash_profile
 然后执行ll hy 
-export USER="Jane Doe"
+export USER="Jane Doe" //可以让变量全剧生效
 source ~/.bash_profile
 echo $USER
 The line export makes the variable to be available to all child sessions initiated from the session you are in. 
@@ -79,3 +83,18 @@ UPSTART_INSTANCE=
 UPSTART_JOB=godex                                                                                                                              
 _=/usr/bin/env 
 
+set也可以列出变量
+
+
+history（或者!!) 查看命令历史
+!$ 上一条命令最后的参数
+!+数字 如!90 运行第90条命令。
+
+<  >>  2> 2>>
+jobs查看任务
+sleep time 暂停
+fg wokeid 恢复任务
+
+a=`env | grep '^x'`  `命令`：返回命令结果
+echo $a;
+"$a" 与 '$a' 结果不一样
